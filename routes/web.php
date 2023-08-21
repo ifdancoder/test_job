@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\ObjectController@index')->name('objects.index');
+Route::get('/raw', 'App\Http\Controllers\ObjectController@indexRaw')->name('objects.indexRaw');
