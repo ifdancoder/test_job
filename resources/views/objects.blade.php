@@ -16,7 +16,7 @@
                             <div class="container container--narrow">
                                 @foreach($group->categories as $category)
                                     <div class="form-check">
-                                        <input name="{{$group->id}}" class="form-check-input" type="{{ $group->multiple ? 'checkbox' : 'radio' }}" id="{{$category->id}}" value="{{$category->alias}}" {{ in_array($category->id, $categoryIds) ? 'checked' : '' }}>
+                                        <input name="{{$group->id}}" class="form-check-input" type="{{ $group->multiple ? 'checkbox' : 'radio' }}" id="{{$category->id}}" value="{{$category->alias}}" {{ in_array($category->id, $sharedData['categoryIds']) ? 'checked' : '' }}>
                                         <label class="form-check-label" for="{{$category->id}}">
                                             {{$category->title}}
                                         </label>
@@ -34,7 +34,7 @@
         <h2>Объекты:</h2>
         <div class="objects">
             <div id="objects-container">
-                @include('objects_only', ['objects' => $objects])
+                @include('objects_only')
             </div>
         </div>
       </div>
